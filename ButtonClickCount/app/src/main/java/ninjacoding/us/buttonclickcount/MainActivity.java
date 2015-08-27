@@ -4,14 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button ourButton;
+    TextView theTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ourButton = (Button)findViewById(R.id.button1);
+        ourButton.setOnClickListener(new OurClickListener(this));
+
+        theTextView = (TextView)findViewById(R.id.textView1);
     }
 
     @Override
